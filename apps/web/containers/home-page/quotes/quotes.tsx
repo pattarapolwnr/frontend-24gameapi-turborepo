@@ -14,7 +14,7 @@ const Quotes: React.FC = () => {
         animateIn='fadeInUp'
         animateOnce={true}
         duration={1.5}
-        delay={1500}
+        delay={800}
       >
         <h1 className='animate-fade-up text-[28px] font-medium text-customDarkGrey md:text-4xl'>
           Get in touch.
