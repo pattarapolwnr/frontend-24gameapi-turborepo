@@ -9,7 +9,7 @@ const ShopButton: React.FC = () => {
         target='_blank'
         className='flex h-10 w-24 items-center justify-center space-x-2'
       >
-        <div className='flex h-3 w-3 items-center justify-center'>
+        <div className='z-40 flex h-3 w-3 items-center justify-center'>
           <FontAwesomeIcon icon={faAsterisk} style={{ color: '#fff' }} />
         </div>
         <h3 className='flex h-6 items-center text-[13px] text-white'>Shop</h3>

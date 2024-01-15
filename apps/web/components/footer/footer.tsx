@@ -7,7 +7,7 @@ const Footer: React.FC = () => {
       <div className='tracking-tight flex h-full w-full max-w-7xl flex-col items-center justify-center space-y-2 pb-20 font-medium md:flex-row md:justify-between md:space-y-0 md:px-10 md:pb-10 xl:px-16 2xl:px-0'>
         {/* Logo & Copyright */}
         <div className='flex flex-col items-center justify-center space-y-4 md:flex-row md:space-x-3 md:space-y-0'>
-          <div className='flex h-6 w-6 items-center justify-center'>
+          <div className='z-40 flex h-6 w-6 items-center justify-center'>
             <FontAwesomeIcon icon={faAsterisk} />
           </div>
           <h3 className='flex h-6 items-center text-sm'>© Oil Harris 2023</h3>
