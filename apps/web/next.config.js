@@ -1,4 +1,19 @@
 /** @type {import('next').NextConfig} */
 module.exports = {
-  transpilePackages: ["@repo/ui"],
+  output: 'standalone',
+  transpilePackages: ['@repo/ui'],
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'cdn2.thecatapi.com',
+        pathname: '**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'cdn1.theimageapi.com',
+        pathname: '**',
+      },
+    ],
+  },
 };
