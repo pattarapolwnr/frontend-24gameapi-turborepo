@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faAsterisk } from '@fortawesome/free-solid-svg-icons';
+import { faStarOfLife } from '@fortawesome/free-solid-svg-icons';
 
 const ShopButton: React.FC = () => {
   return (
@@ -10,7 +10,7 @@ const ShopButton: React.FC = () => {
         className='flex h-10 w-24 items-center justify-center space-x-2'
       >
         <div className='z-40 flex h-3 w-3 items-center justify-center'>
-          <FontAwesomeIcon icon={faAsterisk} style={{ color: '#fff' }} />
+          <FontAwesomeIcon icon={faStarOfLife} style={{ color: '#fff' }} />
         </div>
         <h3 className='flex h-6 items-center text-[13px] text-white'>Shop</h3>
       </a>

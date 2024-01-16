@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faAsterisk } from '@fortawesome/free-solid-svg-icons';
+import { faStarOfLife } from '@fortawesome/free-solid-svg-icons';
 
 const Footer: React.FC = () => {
   return (
@@ -8,7 +8,7 @@ const Footer: React.FC = () => {
         {/* Logo & Copyright */}
         <div className='flex flex-col items-center justify-center space-y-4 md:flex-row md:space-x-3 md:space-y-0'>
           <div className='z-40 flex h-6 w-6 items-center justify-center'>
-            <FontAwesomeIcon icon={faAsterisk} />
+            <FontAwesomeIcon icon={faStarOfLife} />
           </div>
           <h3 className='flex h-6 items-center text-sm'>© Oil Harris 2023</h3>
         </div>

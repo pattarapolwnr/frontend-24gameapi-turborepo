@@ -10,13 +10,57 @@ services:
     ports:
       - 3000:3000
 
-  # api:
-  #   container_name: api
-  #   build:
-  #     context: .
-  #     dockerfile: ./apps/24game-api/Dockerfile
-  #   restart: always
-  #   ports:
-  #     - 3001:3001
-  #   networks:
-  #     - app_network
+  24game-api:
+    depends_on:
+      - db
+    container_name: 24game-api
+    build:
+      context: .
+      dockerfile: ./apps/24game-api/Dockerfile
+    restart: always
+    env_file:
+      - ./apps/24game-api/.env
+    ports:
+      - 3001:3001
+    networks:
+      - my_network
+
+  db:
+    image: mysql:latest
+    container_name: mysql_db
+    command: --init-file /docker-entrypoint-initdb.d/setup.sql
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: 24game_db
+      MYSQL_USER: admin
+      MYSQL_PASSWORD: admin
+    ports:
+      - '3306:3306'
+    volumes:
+      - .docker/setup.sql:/docker-entrypoint-initdb.d/setup.sql
+      - mysql_data:/var/lib/mysql
+    networks:
+      - my_network
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin:latest
+    container_name: phpmyadmin
+    environment:
+      PMA_HOST: db
+      PMA_PORT: 3306
+      PMA_USER: root
+      PMA_PASSWORD: root
+    ports:
+      - '8080:80'
+    depends_on:
+      - db
+    networks:
+      - my_network
+
+networks:
+  my_network:
+    driver: bridge
+
+volumes:
+  mysql_data:
+    driver: local

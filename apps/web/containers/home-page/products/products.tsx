@@ -11,7 +11,7 @@ interface ProductsProps {
 const Products: FC<ProductsProps> = (props): JSX.Element => {
   const data: Cat[] = props.data;
   return (
-    <div className='animate-fade-up mt-28 grid grid-cols-1 items-center justify-items-center gap-y-4 px-4 md:max-w-3xl md:grid-cols-2 md:gap-x-6 md:gap-y-10 lg:mt-14 lg:max-w-6xl xl:mt-36 xl:max-w-7xl'>
+    <div className='mt-28 grid animate-fade-up grid-cols-1 items-center justify-items-center gap-y-4 px-4 md:max-w-3xl md:grid-cols-2 md:gap-x-6 md:gap-y-10 lg:mt-14 lg:max-w-6xl xl:mt-36 xl:max-w-7xl'>
       {data.map((item) => {
         return (
           <div key={item.id}>
@@ -23,9 +23,10 @@ const Products: FC<ProductsProps> = (props): JSX.Element => {
                   height={400}
                   alt={`cat_id_${item.id}`}
                   className='md:backdrop-grayscale'
+                  priority
                 />
 
-                <div className='md:group-hover:animate-slideTopRight absolute right-4 top-4 z-30 hidden h-12 w-12 items-center justify-center rounded-full bg-white transition duration-300 ease-in-out md:group-hover:flex'>
+                <div className='absolute right-4 top-4 z-30 hidden h-12 w-12 items-center justify-center rounded-full bg-white transition duration-300 ease-in-out md:group-hover:flex md:group-hover:animate-slideTopRight'>
                   <div className='h-4 w-4'>
                     <FontAwesomeIcon icon={faLocationArrow} />
                   </div>
